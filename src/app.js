@@ -5,7 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const authRouter = require('./auth/auth-router');
 const { NODE_ENV } = require('./config');
-
+const passportSetup = require('./config/passport-setup');
 
 const app = express();
 
