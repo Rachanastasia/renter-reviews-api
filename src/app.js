@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const authRouter = require('./auth/auth-router');
+const userRouter = require('./user/user-router');
 const { NODE_ENV } = require('./config');
 const passportSetup = require('./config/passport-setup');
 
@@ -15,6 +16,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello boilerplate!')
